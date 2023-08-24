@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DeleteProduct } from '../../Redux/Actions';
+import { AddProduct, DeleteProduct,Decrement } from '../../Redux/Actions';
 import PriceBar from './PriceBar';
 import NoData from './NoData';
 import CartNav from './CartNav';
-import style1 from './style1.module.css';
+import style1 from './style.module.css';
 
 
 interface Product {
@@ -32,23 +32,12 @@ export default function AddToCart() {
         dispatch(DeleteProduct(e));
     };
 
-    const handleOperation = (id: number, operation: string) => {
-        const updatedData = products.map((product) => {
-            if (operation === 'Decrement') {
-                if (product.id === id && product.quantity > 1) {
-                    console.log(product.quantity - 1);
-                    return { ...product, quantity: product.quantity - 1 };
-                }
-                return product;
-            } else {
-                if (product.id === id) {
-                    console.log(product.quantity);
-                    return { ...product, quantity: product.quantity + 1 };
-                }
-                return product;
-            }
-        });
-        setProducts(updatedData);
+    const handleOperation = (id: any, operation: string) => {
+        if (operation === 'Decrement') {
+            dispatch(Decrement(id));
+         } else {
+            dispatch(AddProduct(id));
+         }
     };
     return (
         <div className={style1.cart}>
@@ -68,9 +57,9 @@ export default function AddToCart() {
                                 {product.price}
                             </div>
                             <div className={style1.logic}>
-                                <button onClick={() => handleOperation(product.id, 'Decrement')}>-</button>
+                                <button onClick={() => handleOperation(product, 'Decrement')}>-</button>
                                 <span>{product.quantity}</span>
-                                <button onClick={() => handleOperation(product.id, 'Increment')}>+</button>
+                                <button onClick={() => handleOperation(product, 'Increment')}>+</button>
                             </div>
                             <div className={style1.removeItem}>
                                 <button onClick={() => handleRemoveItem(product.id)}>Remove</button>

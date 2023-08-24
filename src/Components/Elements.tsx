@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PRODUCTS from '../data.json';
 import { useNavigate, useParams } from "react-router-dom";
-import style1 from './Cart/style1.module.css';
+import style1 from './Cart/style.module.css';
 import { useDispatch } from "react-redux";
 import { AddProduct } from "../Redux/Actions";
 

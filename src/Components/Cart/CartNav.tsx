@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import style1 from './style1.module.css';
+import style1 from './style.module.css';
 
 
 export default function CartNav() {

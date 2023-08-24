@@ -34,6 +34,15 @@ export const CartChange = (state: CartState = initialState, action: any): CartSt
             
             return [...updatedItems];
         }
+        case "decrement":{
+            const updatedItems=state.map(item=>{
+                if(item.id===action.payload.id && item.quantity>1){
+                    return {...item,quantity:item.quantity-1}
+                }
+                return {...item};
+            })
+            return [...updatedItems];
+        }
         default:
             return state;
     }
