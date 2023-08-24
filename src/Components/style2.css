@@ -1,0 +1,167 @@
+.productPage {
+    font-family: fantasy;
+}
+
+
+.productImg {
+    display: grid;
+    place-items: center;
+    margin-top: 45px;
+}
+
+.ig {
+    height: 56vh;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productLaunch {
+    font-size: 11px;
+}
+
+.productName {
+    font-size: 25px;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+.productPrice {
+    font-size: 14px;
+    margin: 4px 0px;
+    font-weight: 100;
+}
+
+.moreDetails {
+    max-width: 68vh;
+    text-align: left;
+}
+
+
+
+.Img {
+    height: 19vh;
+}
+
+.productInfo {
+    display: flex;
+    margin: 12px;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 11px;
+}
+
+.otherInfo {
+    margin: 4px;
+    text-align: right;
+}
+
+.productImg {
+    margin: 8px 4px 0px 4px;
+}
+
+.name {
+    font-size: 23px;
+}
+
+.launch {
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.itemPrice {
+    font-size: 11px;
+    margin-top: 1px;
+    font-weight: 900;
+}
+
+.logic {
+    margin: 5px;
+}
+
+.removeItem {
+    margin: 5px;
+}
+
+.cartHeading {
+    display: grid;
+    font-size: 56px;
+    place-items: center;
+    margin-left: 17px;
+}
+
+.cart {
+    font-family: fantasy;
+}
+
+.cartNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartButton {
+    height: 33px;
+    margin: 27px;
+    font-size: 21px;
+}
+
+.priceBar {
+    max-width: 97vw;
+    margin-left: 15px;
+    border: 1px solid gold;
+    background-color: whitesmoke;
+    border-radius: 11px;
+    margin-bottom: 10px;
+}
+
+.priceDetails {
+    margin: 0px 10px;
+    border-bottom: 1px solid lightslategrey;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+.discount {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+.delivery {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+    border-bottom: 1px solid grey;
+}
+
+.totalAmt {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+.mm {
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+    font-size: 49px;
+    color: darkgrey;
+}
+
+.placeOrder {
+    margin: 0px 0px 4px 91%;
+}
+
+.placeOrderButton {
+    background-color: #FF9800;
+    border-radius: 6px;
+    font-size: 19px;
+}

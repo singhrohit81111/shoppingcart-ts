@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "quantity": 1,
+        "name": "Iphone",
+        "launch": 2022,
+        "photo": "/images/Iphone.jpeg",
+        "price": 129000,
+        "details": "For the last few years, buying Apple’s top-tier iPhone has meant needing to get the Pro equivalent. If you want the nicest cameras, display, and battery life, it’s the Pro iPhone you require. That’s no different this year, with 2022’s best iPhones being the iPhone 14 Pro and iPhone 14 Pro Max."
+    },
+    {
+        "id": 2,
+        "quantity": 1,
+        "name": "S23",
+        "launch": 2023,
+        "photo": "/images/S23.jpg",
+        "price": "62000",
+        "details": "The Galaxy S23 Ultra is run by the Snapdragon 8 Gen 2 chipset, which is a unique version specifically customised for the Samsung S23 series, with slightly higher clock speeds for its CPU and GPU. It also comes with 8/12GB of LPPDR5 RAM and 256GB, 512GB, or 1TB of UFS 4.0 storage. The device has two physical SIM slots and supports one eSIM, with GPS, GLONASS, BeiDou, and Galileo supported."
+    },
+    {
+        "id": 3,
+        "quantity": 1,
+        "name": "S22",
+        "launch": 2022,
+        "photo": "/images/S22.jpeg",
+        "price": "74999",
+        "details": "The phone’s boxy shape, flat top and bottom, and curvy sides are all Galaxy Note hallmarks. However, the thing that most ties the Galaxy S22 Ultra to the Note line is the inclusion of an S Pen, complete with a storage slot accessible from the bottom of the phone.Outside of its Note-like design, the Galaxy S22 Ultra is the natural sequel to the Galaxy S21 Ultra. It has a similar camera setup headlined by a 108MP primary sensor but with better hardware than we saw in 2021. It has a newer, faster processor, plenty of RAM and internal storage space, and an enormous 1440p display with a 120Hz adaptive refresh rate.The Samsung Galaxy S22 Ultra is also the most expensive of the three new phones. It starts at $1,199 (£1,149 / €1,259). Do note that Samsung has discontinued the Galaxy S22 Ultra and replaced it with the Galaxy S23 Ultra. In the US, the S23 Ultra is the same price as the S22 Ultra, making a choice between them quite easy."
+    }
+]
