@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './style2.css';
-import { DeleteProduct } from '../Redux/Actions';
+import { DeleteProduct } from '../../Redux/Actions';
 import PriceBar from './PriceBar';
 import NoData from './NoData';
 import CartNav from './CartNav';
+import style1 from './style1.module.css';
+
 
 interface Product {
     id: number;
@@ -31,16 +32,16 @@ export default function AddToCart() {
         dispatch(DeleteProduct(e));
     };
 
-    const handleOperation = (e: number, operation: string) => {
+    const handleOperation = (id: number, operation: string) => {
         const updatedData = products.map((product) => {
             if (operation === 'Decrement') {
-                if (product.id === e && product.quantity > 1) {
+                if (product.id === id && product.quantity > 1) {
                     console.log(product.quantity - 1);
                     return { ...product, quantity: product.quantity - 1 };
                 }
                 return product;
             } else {
-                if (product.id === e) {
+                if (product.id === id) {
                     console.log(product.quantity);
                     return { ...product, quantity: product.quantity + 1 };
                 }
@@ -50,28 +51,28 @@ export default function AddToCart() {
         setProducts(updatedData);
     };
     return (
-        <div className='cart'>
+        <div className={style1.cart}>
             <CartNav />
 
             {products.map((product) => (
-                <div className='product' key={product.id}>
-                    <div className='productInfo'>
-                        <div className='productImg'>
-                            <img className='Img' src={product.photo} alt='no image' />
+                <div className={style1.product} key={product.id}>
+                    <div className={style1.productInfo}>
+                        <div className={style1.productImg}>
+                            <img className={style1.Img} src={product.photo} alt='no image' />
                         </div>
-                        <div className='otherInfo'>
-                            <div className='name'>{product.name}</div>
-                            <div className='launch'>{product.launch}</div>
-                            <div className='itemPrice'>
+                        <div className={style1.otherInfo}>
+                            <div className={style1.name}>{product.name}</div>
+                            <div className={style1.launch}>{product.launch}</div>
+                            <div className={style1.itemPrice}>
                                 <span>Rs.</span>
                                 {product.price}
                             </div>
-                            <div className='logic'>
+                            <div className={style1.logic}>
                                 <button onClick={() => handleOperation(product.id, 'Decrement')}>-</button>
                                 <span>{product.quantity}</span>
                                 <button onClick={() => handleOperation(product.id, 'Increment')}>+</button>
                             </div>
-                            <div className='removeItem'>
+                            <div className={style1.removeItem}>
                                 <button onClick={() => handleRemoveItem(product.id)}>Remove</button>
                             </div>
                         </div>

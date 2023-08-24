@@ -1,7 +1,6 @@
-import data from '../data.json';
-import './style.css';
-import HomeBar from './HomeComp/HomeBar';
-import HomeData from './HomeComp/HomeData';
+import data from '../../data.json';
+import HomeBar from './HomeBar';
+import HomeData from './HomeData';
 
 export default function Home() {
   return (

@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { AddProduct } from '../../Redux/Actions';
+import style from './style.module.css';
 
 export default function HomeData({ products }: any) {
     const navigate = useNavigate();
@@ -10,29 +11,29 @@ export default function HomeData({ products }: any) {
         navigate("/cart");
     }
     return (
-        <div className="homeData">
+        <div className={style.homeData}>
             {products.map((product: any) => {
-                return <div style={{ borderBottom: "1px solid black" }} className="item">
+                return <div style={{ borderBottom: "1px solid black" }} className={style.item}>
                     <div>
                         <div><img src={product.photo} alt="No" height="100px" /></div>
 
                         <div>
-                            <span className="itemDescription">Model:</span>
-                            <span className="itemVal">{product.name}</span>
+                            <span className={style.itemDescription}>Model:</span>
+                            <span className={style.itemVal}>{product.name}</span>
                         </div>
 
                         <div>
-                            <span className="itemDescription">Launch Year:</span>
-                            <span className="itemVal">{product.launch}</span>
+                            <span className={style.itemDescription}>Launch Year:</span>
+                            <span className={style.itemVal}>{product.launch}</span>
                         </div>
                         <div>
-                            <span className="itemDescription">Price:</span>
+                            <span className={style.itemDescription}>Price:</span>
                             <span>Rs.</span>
                             <span >{product.price}</span>
                         </div>
-                        <div className="h5" ><Link to={`/${product.id}`}><span>...</span><span>more details</span></Link></div>
-                        <div className="buttonContainer">
-                            <button className='buyButton' onClick={() => { handleClick1(product) }}>BUY</button>
+                        <div className={style.h5} ><Link to={`/${product.id}`}><span>...</span><span>more details</span></Link></div>
+                        <div className={style.buttonContainer}>
+                            <button className={style.buyButton} onClick={() => { handleClick1(product) }}>BUY</button>
                         </div>
                     </div>
                 </div>

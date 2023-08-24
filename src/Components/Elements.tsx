@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PRODUCTS from '../data.json';
 import { useNavigate, useParams } from "react-router-dom";
-import './style2.css';
+import style1 from './Cart/style1.module.css';
 import { useDispatch } from "react-redux";
 import { AddProduct } from "../Redux/Actions";
 
@@ -34,15 +34,15 @@ export default function ProductList() {
     }
 
     return (
-        <div className="productPage">
+        <div className={style1.productPage}>
             {products.map(product => (
-                <div className="product" key={product.id}>
-                    <div className="productImg"><img className="ig" src={product.photo} alt="No Image" /></div>
-                    <div className="parent">
-                        <div className="productName">{product.name}</div>
-                        <div className="productLaunch">{product.launch}</div>
-                        <div className="productPrice"><span>Rs.</span>{product.price}</div>
-                        <div className="moreDetails">{product.details}</div>
+                <div className={style1.product} key={product.id}>
+                    <div className={style1.productImg}><img className={style1.ig} src={product.photo} alt="No Image" /></div>
+                    <div className={style1.parent}>
+                        <div className={style1.productName}>{product.name}</div>
+                        <div className={style1.productLaunch}>{product.launch}</div>
+                        <div className={style1.productPrice}><span>Rs.</span>{product.price}</div>
+                        <div className={style1.moreDetails}>{product.details}</div>
                         <div><button onClick={() => { handleBuy(product) }}>Buy Now</button></div>
                     </div>
                 </div>

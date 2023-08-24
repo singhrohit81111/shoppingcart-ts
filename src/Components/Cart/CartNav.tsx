@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router';
+import style1 from './style1.module.css';
+
 
 export default function CartNav() {
   const navigate = useNavigate();
@@ -6,9 +8,9 @@ export default function CartNav() {
     navigate('/');
   };
   return (
-    <div className='cartNav'>
-      <div className='cartHeading'>Cart</div>
-      <button className='cartButton' onClick={handleClick}>
+    <div className={style1.cartNav}>
+      <div className={style1.cartHeading}>Cart</div>
+      <button className={style1.cartButton} onClick={handleClick}>
         Home
       </button>
     </div>

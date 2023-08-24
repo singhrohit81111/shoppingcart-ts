@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router'
+import style from './style.module.css';
 
 export default function HomeBar() {
     const navigate = useNavigate();
@@ -7,9 +8,9 @@ export default function HomeBar() {
     }
     return (
         <div>
-            <div className="homeBar">
-                <div className="homeTitle">Trending Smartphones</div>
-                <button className="homeBarButton" onClick={handleClick}>Cart</button>
+            <div className={style.homeBar}>
+                <div className={style.homeTitle}>Trending Smartphones</div>
+                <button className={style.homeBarButton} onClick={handleClick}>Cart</button>
             </div>
         </div>
     )
