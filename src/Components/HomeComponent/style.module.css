@@ -20,6 +20,15 @@
     margin-bottom: 7px;
     border-top-left-radius: 26px;
     border-bottom-right-radius: 26px;
+
+    border-bottom: 1px solid black;
+    min-width: 32vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item:hover{
+    background-color: whitesmoke;
 }
 
 .buttonContainer {
@@ -78,4 +87,10 @@ a {
 .buyButton {
     background-color: #FF9800;
     font-size: 12px;
+}
+
+.homeData{
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
 }

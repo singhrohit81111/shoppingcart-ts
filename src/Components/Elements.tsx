@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import PRODUCTS from '../data.json';
 import { useNavigate, useParams } from "react-router-dom";
 import style1 from './Cart/style.module.css';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AddProduct } from "../Redux/Actions";
 
 interface Product {
@@ -18,13 +17,14 @@ interface Product {
 export default function ProductList() {
     const navigate = useNavigate();
     const [products, setProducts] = useState<Product[]>([]);
+    const { data, loading } = useSelector((state: any) => { return state.userReducer });
     const dispatch = useDispatch();
     const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
-        if(!id) return;
+        if (!id) return;
 
-        const filteredProducts = PRODUCTS.filter((z) => { return z.id == +id }) as Product[];
+        const filteredProducts = data.filter((z: Product) => { return z.id == +id }) as Product[];
         setProducts(filteredProducts);
     }, [id]);
 
@@ -32,7 +32,7 @@ export default function ProductList() {
         dispatch(AddProduct(product));
         navigate("/cart");
     }
-
+    if (loading) return <p>Loading...</p>
     return (
         <div className={style1.productPage}>
             {products.map(product => (

@@ -1,7 +1,9 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { AddProduct } from '../../Redux/Actions';
+import { AddProduct, fetchUserData } from '../../Redux/Actions';
 import style from './style.module.css';
+import { useEffect } from 'react';
+import { vals } from '../../Redux/Store';
 
 export default function HomeData({ products }: any) {
     const navigate = useNavigate();
@@ -10,9 +12,18 @@ export default function HomeData({ products }: any) {
         dispatch(AddProduct(product));
         navigate("/cart");
     }
+    const { data, loading, error } = useSelector((state: any) => { return state.userReducer });
+    console.log(data);
+
+    useEffect(() => {
+        console.log('CLEEEEEDDDDD')
+        vals.dispatch(fetchUserData());
+    }, [dispatch]);
+
+    if (loading) return <p>Loading...</p>
     return (
         <div className={style.homeData}>
-            {products.map((product: any) => {
+            {data.map((product: any) => {
                 return <div style={{ borderBottom: "1px solid black" }} className={style.item}>
                     <div>
                         <div><img src={product.photo} alt="No" height="100px" /></div>
