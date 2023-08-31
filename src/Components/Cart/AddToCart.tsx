@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddProduct, DeleteProduct,Decrement } from '../../Redux/Actions';
+import { AddProduct, DeleteProduct, Decrement } from '../../Redux/Actions';
 import PriceBar from './PriceBar';
 import NoData from './NoData';
 import CartNav from './CartNav';
@@ -32,12 +32,17 @@ export default function AddToCart() {
         dispatch(DeleteProduct(e));
     };
 
-    const handleOperation = (id: any, operation: string) => {
+    const handleOperation = (product: any, operation: string, quantity: any) => {
         if (operation === 'Decrement') {
-            dispatch(Decrement(id));
-         } else {
-            dispatch(AddProduct(id));
-         }
+            if (quantity === 1) {
+                console.log(product);
+                dispatch(DeleteProduct(product.id))
+            } else {
+                dispatch(Decrement(product));
+            }
+        } else {
+            dispatch(AddProduct(product));
+        }
     };
     return (
         <div className={style1.cart}>
@@ -57,9 +62,9 @@ export default function AddToCart() {
                                 {product.price}
                             </div>
                             <div className={style1.logic}>
-                                <button onClick={() => handleOperation(product, 'Decrement')}>-</button>
+                                <button onClick={() => handleOperation(product, 'Decrement', product.quantity)}>-</button>
                                 <span>{product.quantity}</span>
-                                <button onClick={() => handleOperation(product, 'Increment')}>+</button>
+                                <button onClick={() => handleOperation(product, 'Increment', product.quantity)}>+</button>
                             </div>
                             <div className={style1.removeItem}>
                                 <button onClick={() => handleRemoveItem(product.id)}>Remove</button>
